@@ -16,19 +16,17 @@ public class UserServiceImpl implements UserService {
     private UserDAO userDAO;
 
     public void addUser(User user) {
-        this.userDAO.addUser(user);
+        userDAO.addUser(user);
     }
     public void updateUser(User user) {
-        this.userDAO.updateUser(user);
+        userDAO.updateUser(user);
     }
     public void deleteUser(int id) {
-        this.userDAO.deleteUser(id);
+        userDAO.deleteUser(id);
     }
-    public List<User> getUsers() {
-        return this.userDAO.getUsers();
-    }
+    public List<User> getUsers() { return userDAO.getUsers(); }
     public User getUser(int id) {
-        return this.userDAO.getUser(id);
+        return userDAO.getUser(id);
     }
 
 
