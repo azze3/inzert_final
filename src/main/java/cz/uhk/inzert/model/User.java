@@ -1,11 +1,6 @@
 package cz.uhk.inzert.model;
 
-
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 
 //Entity bean with JPA annotations
@@ -13,43 +8,42 @@ import javax.persistence.Table;
 @Table(name= "user")
 public class User {
     @Id
-    @Column(name = "id")
+    @GeneratedValue
+    //@Column(name = "id")
     private int id;
-    @Column(name = "firstName")
+    //@Column(name = "firstName")
     private String firstName;
-    @Column(name = "lastName")
+    //@Column(name = "lastName")
     private String lastName;
-    @Column(name = "login")
+    //@Column(name = "login")
     private String login;
-    @Column(name = "phoneNumber")
+    //@Column(name = "password")
+    private String password;
+    //@Column(name = "phoneNumber")
     private String phoneNumber;
-    @Column(name = "email")
+    //@Column(name = "email")
     private String email;
-    @Column(name = "adress")
-    private int adress;
-    @Column(name = "rating")
+    //@Column(name = "rating")
     private int rating;
-    @Column(name = "privileges")
+    //@Column(name = "privileges")
     private int privileges;
 
-    public int getId() {
-        return id;
-    }
 
-    public User(){
+    public User() {}
 
-    }
-    public User(String firstName, String lastName, String login, String phoneNumber,
-                String email, int adress, int rating, int privileges) {
-        //this.id = id;
+    public User(String firstName, String lastName, String login,String  password, String phoneNumber, String email,  int rating, int privileges) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.login = login;
         this.phoneNumber = phoneNumber;
         this.email = email;
-        this.adress = adress;
+        this.password = password;
         this.rating = rating;
         this.privileges = privileges;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getFirstName() {
@@ -92,12 +86,12 @@ public class User {
         this.email = email;
     }
 
-    public int getAdress() {
-        return adress;
+    public String getPassword() {
+        return password;
     }
 
-    public void setAdress(int adress) {
-        this.adress = adress;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public int getRating() {
