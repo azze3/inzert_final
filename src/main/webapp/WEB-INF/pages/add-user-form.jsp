@@ -4,63 +4,66 @@
   Date: 19.01.2018
   Time: 15:05.
 --%>
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-
-<?xml version="1.0" encoding="ISO-8859-1" ?>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-    
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://www.springframework.org/tags/form"%>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Add user page</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<!-- dodelat relativni linky!!!-->
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/style/css/bootstrap.css"/>
+	<title>index</title>
 </head>
 <body>
-<h1>Add user page</h1>
-<p>Here you can add a new user.</p>
-<form:form method="POST" commandName="user" action="${pageContext.request.contextPath}/user/add.html">
-<table>
-<tbody>
-	<tr>
-		<td>firstName:</td>
-		<td><form:input path="firstName" /></td>
-	</tr>
-	<tr>
-		<td>lastName:</td>
-		<td><form:input path="lastName" /></td>
-	</tr>
-	<tr>
-		<td>login:</td>
-		<td><form:input path="login" /></td>
-	</tr>
-	<tr>
-		<td>password:</td>
-		<td><form:input path="password" /></td>
-	</tr>
-	<tr>
-		<td>phoneNumber:</td>
-		<td><form:input path="phoneNumber" /></td>
-	</tr>
-	<tr>
-		<td>email:</td>
-		<td><form:input path="email" /></td>
-	</tr>
-	<tr>
-		<td>rating:</td>
-		<td><form:input path="rating" /></td>
-	</tr>
-	<tr>
-		<td>privileges:</td>
-		<td><form:input path="privileges" /></td>
-	</tr>
-	<tr>
-		<td><input type="submit" value="Add" /></td>
-		<td></td>
-	</tr>
-</tbody>
-</table>
-</form:form>
+<div class="container">
 
-<p><a href="${pageContext.request.contextPath}/index.html">Home page</a></p>
+	<c:form  method="POST"  commandName="user"  action="${pageContext.request.contextPath}/user/add/process.html">
+
+		<div class="form-group">
+			<c:label for="inputLogin" path="login">Login</c:label>
+			<c:input type="text" class="form-control" id="inputLogin" path="login" placeholder="login" required="required"></c:input>
+		</div>
+		<div class="form-row">
+			<div class="form-group col-md-6">
+				<c:label for="inputPassword" path="password">Password</c:label>
+				<c:input type="password" class="form-control" id="inputPassword" path="password" placeholder="Password" required="required"></c:input>
+			</div>
+			<!--<div class="form-group col-md-6">
+				<label for="inputPassword2" >Password</label>
+				<input type="password" class="form-control" id="inputPassword2"  placeholder="Password" required="required"></input>
+			</div>-->
+		</div>
+		<div class="form-row">
+			<div class="form-group col-md-6">
+				<c:label for="inputFirstName" path="firstName">Jméno</c:label>
+				<c:input type="text" class="form-control" id="inputFirstName" path="firstName"   placeholder="Jméno" required="required"></c:input>
+			</div>
+			<div class="form-group col-md-6" path="">
+				<c:label for="inputLastName" path="lastName">Příjmení</c:label>
+				<c:input type="text" class="form-control" id="inputLastName" path="lastName" placeholder="Příjmení" required="required"></c:input>
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="form-group col-md-6">
+				<c:label for="inputEmail" path="email">Email</c:label>
+				<c:input type="email" class="form-control" id="inputEmail" path="email" placeholder="Email" required="required"></c:input>
+			</div>
+			<div class="form-group col-md-6">
+				<c:label for="inputPhone" path="phoneNumber">Tel. číslo</c:label>
+				<c:input type="text" class="form-control" id="inputPhone" path="phoneNumber"  placeholder="Tel. číslo"></c:input>
+			</div>
+		</div>
+		<button type="submit" value="Add" class="btn btn-primary">Registrovat</button>
+	</c:form>
+
+	<p><a href="${pageContext.request.contextPath}/index.html">Home page</a></p>
+</div>
 </body>
 </html>
+
+
+

@@ -18,6 +18,14 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+
+    @RequestMapping(value="/login")
+    public ModelAndView loginPage() {
+        ModelAndView modelAndView = new ModelAndView("login");
+        //todo asi:)
+        return modelAndView;
+    }
+
     @RequestMapping(value="/add", method=RequestMethod.GET)
     public ModelAndView addUserPage() {
         ModelAndView modelAndView = new ModelAndView("add-user-form");
@@ -25,7 +33,7 @@ public class UserController {
         return modelAndView;
     }
 
-    @RequestMapping(value="/add", method=RequestMethod.POST)
+    @RequestMapping(value="/add/process", method=RequestMethod.POST)
     public ModelAndView addingUser(@ModelAttribute User user) {
 
         ModelAndView modelAndView = new ModelAndView("home");
@@ -56,21 +64,17 @@ public class UserController {
     }
 
     @RequestMapping(value="/edit/{id}", method=RequestMethod.POST)
-    public ModelAndView edditingTeam(@ModelAttribute User user, @PathVariable Integer id) {
-
+    public ModelAndView editingUser(@ModelAttribute User user, @PathVariable Integer id) {
         ModelAndView modelAndView = new ModelAndView("home");
-
         userService.updateUser(user);
-
         String message = "User was successfully edited.";
         modelAndView.addObject("message", message);
-
         return modelAndView;
     }
 
     @RequestMapping(value="/delete/{id}", method=RequestMethod.GET)
     public ModelAndView deleteUser(@PathVariable Integer id) {
-        ModelAndView modelAndView = new ModelAndView("home");
+        ModelAndView modelAndView = new ModelAndView("list-of-users");
         userService.deleteUser(id);
         String message = "User was successfully deleted.";
         modelAndView.addObject("message", message);

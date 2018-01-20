@@ -5,38 +5,40 @@
   Time: 15:05.
 --%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
-<?xml version="1.0" encoding="ISO-8859-1" ?>
-
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-         pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-    <title>List of users</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- dodelat relativni linky!!!-->
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/style/css/bootstrap.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Setting</title>
 </head>
-<body>
-<h1>List of users</h1>
-<p>Here you can see the list of the user, edit them, remove or update.</p>
-<table border="1px" cellpadding="0" cellspacing="0" >
+
+<a href="${pageContext.request.contextPath}/user/add.html" class="btn btn-primary">Přidat uživatele</a>
+<table class="table table-hover">
     <thead>
     <tr>
-        <th>id</th>
-        <th>firstname</th>
-        <th>lastname</th>
-        <th>login</th>
-        <th>heslo</th>
-        <th>cislo</th>
-        <th>mail</th>
-        <th>rating</th>
-        <th>privilegia</th>
+        <th scope="col">#</th>
+        <th scope="col">Jméno</th>
+        <th scope="col">Příjmení</th>
+        <th scope="col">Login</th>
+        <th scope="col">Heslo</th>
+        <th scope="col">Tel. číslo</th>
+        <th scope="col">Email</th>
+        <th scope="col">Rating</th>
+        <th scope="col">Práva</th>
     </tr>
     </thead>
     <tbody>
     <c:forEach var="user" items="${users}">
         <tr>
-            <td>${user.id}</td>
+            <th  scope="row">${user.id}</th>
             <td>${user.firstName}</td>
             <td>${user.lastName}</td>
             <td>${user.login}</td>
@@ -46,15 +48,17 @@
             <td>${user.rating}</td>
             <td>${user.privileges}</td>
             <td>
-                <a href="${pageContext.request.contextPath}/user/edit/${user.id}.html">Edit</a><br/>
-                <a href="${pageContext.request.contextPath}/user/delete/${user.id}.html">Delete</a><br/>
+                <a href="${pageContext.request.contextPath}/user/edit/${user.id}.html" class="btn btn-primary">Edit</a>
+                <a href="${pageContext.request.contextPath}/user/delete/${user.id}.html" class="btn btn-danger">Delete</a>
             </td>
         </tr>
     </c:forEach>
+
     </tbody>
 </table>
-
 <p><a href="${pageContext.request.contextPath}/index.html">Home page</a></p>
+<body>
 
 </body>
 </html>
+

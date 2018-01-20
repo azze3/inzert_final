@@ -42,9 +42,9 @@ public class User {
         this.privileges = privileges;
     }
 
-    public int getId() {
-        return id;
-    }
+    public int getId() { return id; }
+
+    public void setId(int id) { this.id = id; }
 
     public String getFirstName() {
         return firstName;
@@ -108,10 +108,5 @@ public class User {
 
     public void setPrivileges(int privileges) {
         this.privileges = privileges;
-    }
-
-    @Override
-    public String toString() {
-        return super.toString();
     }
 }

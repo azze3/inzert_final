@@ -35,8 +35,8 @@ public class UserDAOImpl implements UserDAO {
         userToUpdate.setEmail(user.getEmail());
         userToUpdate.setRating(user.getRating());
         userToUpdate.setPrivileges(user.getPrivileges());
-        getCurrentSession().update(userToUpdate);
 
+        getCurrentSession().update(userToUpdate);
     }
 
     public User getUser(int id) {
