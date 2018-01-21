@@ -33,6 +33,9 @@ public class WebAppConfig extends WebMvcConfigurerAdapter {
     private static final String PROPERTY_NAME_DATABASE_USERNAME = "db.username";
 
     private static final String PROPERTY_NAME_HIBERNATE_DIALECT = "hibernate.dialect";
+    private static final String PROPERTY_NAME_HIBERNATE_CONNECTION_CHARSET = "hibernate.connection.CharSet";
+    private static final String PROPERTY_NAME_HIBERNATE_CONNECTION_CHARACTERENCODING = "hibernate.connection.characterEncoding";
+    private static final String PROPERTY_NAME_HIBERNATE_CONNECTION_USEUNICODE = "hibernate.connection.useUnicode";
     private static final String PROPERTY_NAME_HIBERNATE_SHOW_SQL = "hibernate.show_sql";
     private static final String PROPERTY_NAME_ENTITYMANAGER_PACKAGES_TO_SCAN = "entitymanager.packages.to.scan";
 
@@ -69,6 +72,10 @@ public class WebAppConfig extends WebMvcConfigurerAdapter {
         Properties properties = new Properties();
         properties.put(PROPERTY_NAME_HIBERNATE_DIALECT, env.getRequiredProperty(PROPERTY_NAME_HIBERNATE_DIALECT));
         properties.put(PROPERTY_NAME_HIBERNATE_SHOW_SQL, env.getRequiredProperty(PROPERTY_NAME_HIBERNATE_SHOW_SQL));
+
+        properties.put(PROPERTY_NAME_HIBERNATE_CONNECTION_CHARSET, env.getRequiredProperty(PROPERTY_NAME_HIBERNATE_CONNECTION_CHARSET));
+        properties.put(PROPERTY_NAME_HIBERNATE_CONNECTION_CHARACTERENCODING, env.getRequiredProperty(PROPERTY_NAME_HIBERNATE_CONNECTION_CHARACTERENCODING));
+        properties.put(PROPERTY_NAME_HIBERNATE_CONNECTION_USEUNICODE, env.getRequiredProperty(PROPERTY_NAME_HIBERNATE_CONNECTION_USEUNICODE));
         return properties;
     }
 

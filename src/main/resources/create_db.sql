@@ -1,4 +1,4 @@
-CREATE DATABASE  IF NOT EXISTS `inzert`;
+CREATE DATABASE  IF NOT EXISTS `inzert`  DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
 USE `inzert`;
 
 SET foreign_key_checks = 0;

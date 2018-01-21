@@ -22,10 +22,18 @@
 <header class="bg-light">
 <div class="container">
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 border-bottom box-shadow">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="d-block mr-1">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="14.31" y1="8" x2="20.05" y2="17.94"></line>
+            <line x1="9.69" y1="8" x2="21.17" y2="8"></line>
+            <line x1="7.38" y1="12" x2="13.12" y2="2.06"></line>
+            <line x1="9.69" y1="16" x2="3.95" y2="6.06"></line>
+            <line x1="14.31" y1="16" x2="2.83" y2="16"></line>
+            <line x1="16.62" y1="12" x2="10.88" y2="21.94"></line>
+        </svg>
         <h5 class="my-0 mr-md-auto font-weight-normal">Inzert</h5>
         <nav class="my-2 my-md-0 mr-md-3">
             <a class="p-2  text-dark" href="#">Přidat inzerát?</a>
-            <a class="p-2  text-dark" href="#">Support</a>
             <a class="p-2  text-dark" href="${pageContext.request.contextPath}/setting.html">Setting</a>
         </nav>
         <a class="btn btn-outline-success" href="${pageContext.request.contextPath}/user/login.html">Sign up</a>
@@ -39,19 +47,21 @@
         <div class="container">
             <h1 class="jumbotron-heading">Uvodni text</h1>
             <p class="lead text-muted">tady vyhledavaci pole?</p>
-            <p class="lead text-muted">todo: hruba kostra</p>
-            <p class="lead text-muted">- format ukladani do db (hacky, carky)</p>
-            <p class="lead text-muted">- zmena db: login PK (+ zmena/check kodu: User, UserDAO, UserDAOImpl, UserService, UserServiceImpl, addser.jsp, editUser.jsp, settingUser.jsp</p>
-            <p class="lead text-muted">- vytvorit inzeraty + CRUD (vlastni kolonka v setting jako user,category?)</p>
-            <p class="lead text-muted">- bootstrap modal na vytvoreni inzeratu?</p>
-            <p class="lead text-muted">- login + opravneni + odhlaseni</p>
-            <p class="lead text-muted">- podle opravneni zmena gui</p>
-            <p class="lead text-muted">- odepsani na inzerat (?)</p>
-            <p class="lead text-muted">- hodnoceni</p>
-            <p class="lead text-muted">...</p>
-            <p class="lead text-muted">- javascript potrvzeni o smazani, odhlaseni</p>
-            <p class="lead text-muted">- check pozadavky</p>
-            <p class="lead text-muted">- dodelani designu</p>
+            <div class="text-left">
+            <p class="text-muted">hruba kostra todo: </p>
+            <p class="text-muted">- zmena db: login PK (+ zmena/check kodu: User, UserDAO, UserDAOImpl, UserService, UserServiceImpl, addser.jsp, editUser.jsp, settingUser.jsp</p>
+            <p class="text-muted">- zmena db: pridavani fotek k inzeratu!</p>
+            <p class=" text-muted">- vytvorit inzeraty + CRUD (vlastni kolonka v setting jako user,category?)</p>
+            <p class=" text-muted">- login + opravneni + odhlaseni</p>
+            <p class=" text-muted">- podle opravneni zmena gui (pridani inzeratu po loginu, setting pro admina vs user</p>
+            <p class=" text-muted">- odepsani na inzerat (?)</p>
+            <p class=" text-muted">- hodnoceni</p>
+            <p class=" text-muted">...</p>
+            <p class=" text-muted">- javascript potrvzeni o smazani, odhlaseni</p>
+            <p class=" text-muted">- check pozadavky</p>
+            <p class=" text-muted">- dodelani designu</p>
+            </div>
+
         </div>
     </section>
 
