@@ -1,6 +1,7 @@
-package cz.uhk.inzert.dao;
+package cz.uhk.inzert.dao.impl;
 
 import cz.uhk.inzert.model.User;
+import cz.uhk.inzert.dao.UserDAO;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +9,6 @@ import org.springframework.stereotype.Repository;
 
 
 import java.util.List;
-import java.util.logging.Logger;
 
 
 @Repository

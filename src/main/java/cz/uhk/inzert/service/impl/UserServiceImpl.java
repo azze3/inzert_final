@@ -1,7 +1,8 @@
-package cz.uhk.inzert.service;
+package cz.uhk.inzert.service.impl;
 
 import cz.uhk.inzert.dao.UserDAO;
 import cz.uhk.inzert.model.User;
+import cz.uhk.inzert.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,7 +27,5 @@ public class UserServiceImpl implements UserService {
     public User getUser(int id) {
         return userDAO.getUser(id);
     }
-
-
 
 }

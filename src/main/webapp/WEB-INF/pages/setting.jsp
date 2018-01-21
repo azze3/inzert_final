@@ -34,6 +34,7 @@
 <main role="main">
     <a class="btn btn-outline-success" href="${pageContext.request.contextPath}/user/list.html">spravovat uzivatele</a><br />
     <a class="btn btn-outline-success" href="${pageContext.request.contextPath}/category/list.html">spravovat kategorie</a><br />
+    <a class="btn btn-outline-success" href="${pageContext.request.contextPath}/advertisement/list.html">spravovat inzeráty</a><br />
 
     <p><a href="${pageContext.request.contextPath}/index.html">Home page</a></p>
 </main>

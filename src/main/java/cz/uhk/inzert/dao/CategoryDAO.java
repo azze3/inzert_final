@@ -1,8 +1,6 @@
 package cz.uhk.inzert.dao;
 
 import cz.uhk.inzert.model.Category;
-import cz.uhk.inzert.model.User;
-
 import java.util.List;
 
 public interface CategoryDAO {

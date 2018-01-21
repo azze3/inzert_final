@@ -1,5 +1,6 @@
-package cz.uhk.inzert.dao;
+package cz.uhk.inzert.dao.impl;
 
+import cz.uhk.inzert.dao.CategoryDAO;
 import cz.uhk.inzert.model.Category;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

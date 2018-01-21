@@ -1,7 +1,6 @@
 package cz.uhk.inzert.service;
 
 import cz.uhk.inzert.model.Category;
-
 import java.util.List;
 
 public interface CategoryService {

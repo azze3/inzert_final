@@ -1,8 +1,8 @@
-package cz.uhk.inzert.service;
+package cz.uhk.inzert.service.impl;
 
 import cz.uhk.inzert.dao.CategoryDAO;
 import cz.uhk.inzert.model.Category;
-import cz.uhk.inzert.model.User;
+import cz.uhk.inzert.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,6 +20,4 @@ public class CategoryServiceImpl implements CategoryService {
     public void deleteCategory(int id) { categoryDAO.deleteCategory(id); }
     public List<Category> getCategories() { return categoryDAO.getCategories(); }
     public Category getCategory(int id) { return categoryDAO.getCategory(id); }
-
-
 }
