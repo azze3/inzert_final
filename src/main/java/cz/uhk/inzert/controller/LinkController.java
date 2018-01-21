@@ -17,4 +17,8 @@ public class LinkController {
         return new ModelAndView("home");
     }
 
+    @RequestMapping(value="/setting")
+    public ModelAndView settingPage() {
+        return new ModelAndView("setting");
+    }
 }

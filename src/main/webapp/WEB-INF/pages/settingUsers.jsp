@@ -13,10 +13,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <!-- dodelat relativni linky!!!-->
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/style/css/bootstrap.css"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/bootstrap.css"/>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
     <title>Setting</title>
 </head>
 
@@ -56,6 +54,7 @@
 
     </tbody>
 </table>
+<p><a href="${pageContext.request.contextPath}/setting.html">Setting</a></p>
 <p><a href="${pageContext.request.contextPath}/index.html">Home page</a></p>
 <body>
 

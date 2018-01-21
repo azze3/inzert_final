@@ -28,7 +28,7 @@ public class UserController {
 
     @RequestMapping(value="/add", method=RequestMethod.GET)
     public ModelAndView addUserPage() {
-        ModelAndView modelAndView = new ModelAndView("add-user-form");
+        ModelAndView modelAndView = new ModelAndView("addUser");
         modelAndView.addObject("user", new User());
         return modelAndView;
     }
@@ -47,7 +47,7 @@ public class UserController {
 
     @RequestMapping(value="/list")
     public ModelAndView listOfUser() {
-        ModelAndView modelAndView = new ModelAndView("list-of-users");
+        ModelAndView modelAndView = new ModelAndView("settingUsers");
 
         List<User> users = userService.getUsers();
         modelAndView.addObject("users", users);
@@ -57,7 +57,7 @@ public class UserController {
 
     @RequestMapping(value="/edit/{id}", method=RequestMethod.GET)
     public ModelAndView editUserPage(@PathVariable Integer id) {
-        ModelAndView modelAndView = new ModelAndView("edit-user-form");
+        ModelAndView modelAndView = new ModelAndView("editUser");
         User user = userService.getUser(id);
         modelAndView.addObject("user",user);
         return modelAndView;
@@ -65,16 +65,20 @@ public class UserController {
 
     @RequestMapping(value="/edit/{id}", method=RequestMethod.POST)
     public ModelAndView editingUser(@ModelAttribute User user, @PathVariable Integer id) {
-        ModelAndView modelAndView = new ModelAndView("home");
+        ModelAndView modelAndView = new ModelAndView("settingUsers");
         userService.updateUser(user);
         String message = "User was successfully edited.";
         modelAndView.addObject("message", message);
+
+        List<User> users = userService.getUsers();
+        modelAndView.addObject("users", users);
+
         return modelAndView;
     }
 
     @RequestMapping(value="/delete/{id}", method=RequestMethod.GET)
     public ModelAndView deleteUser(@PathVariable Integer id) {
-        ModelAndView modelAndView = new ModelAndView("list-of-users");
+        ModelAndView modelAndView = new ModelAndView("settingUsers");
         userService.deleteUser(id);
         String message = "User was successfully deleted.";
         modelAndView.addObject("message", message);
