@@ -11,23 +11,23 @@ public class Advertisement {
     private int id;
     private String title;
     private String description;
-    @ManyToOne
-    @JoinColumn(name = "user.Id")
+    @ManyToOne(cascade = {CascadeType.ALL})
+    @JoinColumn(name = "userId")
     private User user;
-    @ManyToOne
-    @JoinColumn(name = "category.Id")
+    @ManyToOne(cascade = {CascadeType.ALL})
+    @JoinColumn(name = "categoryId")
     private Category category;
     private int reported;
+    @Temporal(TemporalType.DATE)
     private Date created;
     private float price;
     private String location;
-    private boolean type;
 
     public Advertisement() {
 
     }
 
-    public Advertisement(String title, String description, User user, Category category, int reported, Date created, float price, String location, boolean type) {
+    public Advertisement(String title, String description, User user, Category category, int reported, Date created, float price, String location) {
         this.title = title;
         this.description = description;
         this.user = user;
@@ -36,7 +36,6 @@ public class Advertisement {
         this.created = created;
         this.price = price;
         this.location = location;
-        this.type = type;
     }
 
     public int getId() {
@@ -109,13 +108,5 @@ public class Advertisement {
 
     public void setLocation(String location) {
         this.location = location;
-    }
-
-    public boolean isType() {
-        return type;
-    }
-
-    public void setType(boolean type) {
-        this.type = type;
     }
 }

@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -30,6 +33,11 @@ public class AdvertisementController {
     public ModelAndView addingAdvertisement(@ModelAttribute Advertisement advertisement) {
 
         ModelAndView modelAndView = new ModelAndView("settingAdvertisements");
+
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+        Date date = new Date();
+        advertisement.setCreated(date);
+
         advertisementService.addAdvertisement(advertisement);
 
         String message = "Advertisement was successfully added.";
@@ -79,6 +87,10 @@ public class AdvertisementController {
         advertisementService.deleteAdvertisement(id);
         String message = "Advertisement was successfully deleted.";
         modelAndView.addObject("message", message);
+
+        List<Advertisement> advertisements = advertisementService.getAdvertisements();
+        modelAndView.addObject("advertisements", advertisements);
+
         return modelAndView;
     }
 }

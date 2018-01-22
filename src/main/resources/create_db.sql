@@ -35,18 +35,17 @@ CREATE TABLE `advertisement` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(45) NOT NULL,
   `description` varchar(1000) DEFAULT "",
-  `user` int(11) NOT NULL,
-  `category` int(11) NOT NULL,
+  `userId` int(11),
+  `categoryId` int(11) NOT NULL DEFAULT 1,
   `reported` int(5) DEFAULT 0,
   `created` datetime DEFAULT CURRENT_TIMESTAMP,
   `price` float(10) DEFAULT 0,
-  `location` varchar(10) DEFAULT "",
-  `type` tinyint default 0,  # 0 = sell; 1 = buy
+  `location` varchar(30) DEFAULT "",
   PRIMARY KEY (`id`),
-  CONSTRAINT FK_UserAdvertisement FOREIGN KEY (user)
-  REFERENCES user(id),
-  CONSTRAINT FK_CategoryAdvertisement FOREIGN KEY (category)
-  REFERENCES category(id)
+  CONSTRAINT FK_UserAdvertisement FOREIGN KEY (`userId`)
+  REFERENCES `user`(`id`),
+  CONSTRAINT FK_CategoryAdvertisement FOREIGN KEY (`categoryId`)
+  REFERENCES `category`(`id`)
 ) AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 CREATE TABLE `response` (
@@ -72,7 +71,3 @@ CREATE TABLE `rating` (
   CONSTRAINT FK_UserMakerRating FOREIGN KEY (userMaker)
   REFERENCES user(id)
 ) AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
-
-
-
-

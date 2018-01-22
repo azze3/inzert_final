@@ -27,6 +27,10 @@ public class AdvertisementDAOImpl implements AdvertisementDAO {
     public void updateAdvertisement(Advertisement advertisement) {
         Advertisement advertisementToUpdate = getAdvertisement(advertisement.getId());
         advertisementToUpdate.setTitle(advertisement.getTitle());
+        advertisementToUpdate.setDescription(advertisement.getDescription());
+        advertisementToUpdate.setCategory(advertisement.getCategory());
+        advertisementToUpdate.setPrice(advertisement.getPrice());
+        advertisementToUpdate.setLocation(advertisement.getLocation());
         getCurrentSession().update(advertisementToUpdate);
     }
 

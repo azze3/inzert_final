@@ -25,6 +25,13 @@
     <tr>
         <th scope="col">#</th>
         <th scope="col">Název</th>
+        <th scope="col">Popis</th>
+        <th scope="col">Uživatel</th>
+        <th scope="col">Kategorie</th>
+        <th scope="col">Počet nahlášení</th>
+        <th scope="col">Vytvořen</th>
+        <th scope="col">Cena</th>
+        <th scope="col">Lokace</th>
     </tr>
     </thead>
     <tbody>
@@ -32,6 +39,13 @@
         <tr>
             <th  scope="row">${advertisement.id}</th>
             <td>${advertisement.title}</td>
+            <td>${advertisement.description}</td>
+            <td>${advertisement.user.id}</td>
+            <td>${advertisement.category.id}</td>
+            <td>${advertisement.reported}</td>
+            <td>${advertisement.created}</td>
+            <td>${advertisement.price}</td>
+            <td>${advertisement.location}</td>
             <td>
                 <a href="${pageContext.request.contextPath}/advertisement/edit/${advertisement.id}.html" class="btn btn-primary">Edit</a>
                 <a href="${pageContext.request.contextPath}/advertisement/delete/${advertisement.id}.html" class="btn btn-danger">Delete</a>
